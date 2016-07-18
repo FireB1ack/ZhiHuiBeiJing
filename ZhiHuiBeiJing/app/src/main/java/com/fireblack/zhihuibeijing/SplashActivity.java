@@ -10,6 +10,8 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.RelativeLayout;
 
+import com.fireblack.zhihuibeijing.utils.PrefUtils;
+
 /**
  * 闪屏页
  */
@@ -79,7 +81,12 @@ public class SplashActivity extends Activity {
      * 跳转下一个页面
      */
     private void JumpNext() {
-        startActivity(new Intent(SplashActivity.this,GuiderActivity.class));
+        Boolean user_guider = PrefUtils.getBoolean(SplashActivity.this, "is_user_guider_showed", false);
+        if(!user_guider) {
+            startActivity(new Intent(SplashActivity.this, GuiderActivity.class));
+        }else {
+            startActivity(new Intent(SplashActivity.this,MainActivity.class));
+        }
         finish();
     }
 }
