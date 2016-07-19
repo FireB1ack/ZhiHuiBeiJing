@@ -12,15 +12,14 @@ import com.fireblack.zhihuibeijing.base.BasePager;
  * Created by ChengHao on 2016/7/18.
  * 政务
  */
-public class GOvAffairsPager extends BasePager {
-    public GOvAffairsPager(Activity activity) {
+public class GovAffairsPager extends BasePager {
+    public GovAffairsPager(Activity activity) {
         super(activity);
     }
 
     @Override
     public void initData() {
         tvTitle.setText("人口管理");
-        btnMenu.setVisibility(View.GONE);
         setSlidingMenuEnable(true);//关闭侧边栏
 
         TextView textView = new TextView(mActivity);

@@ -3,6 +3,7 @@ package com.fireblack.zhihuibeijing;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.Window;
 
 import com.fireblack.zhihuibeijing.fragment.ContentFragment;
 import com.fireblack.zhihuibeijing.fragment.LeftMenuFragment;
@@ -17,11 +18,12 @@ public class MainActivity extends SlidingFragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         setBehindContentView(R.layout.left_menu);// 设置侧边栏
         SlidingMenu slidingMenu = getSlidingMenu();//获取侧边栏对象
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);// 设置全屏触摸
-        slidingMenu.setBehindOffset(200);// 设置预留屏幕的宽度
+        slidingMenu.setBehindOffset(280);// 设置预留屏幕的宽度
 
 //        setBehindContentView(R.layout.left_menu);// 设置侧边栏布局
 //
@@ -68,4 +70,5 @@ public class MainActivity extends SlidingFragmentActivity {
 
         return fragment;
     }
+
 }

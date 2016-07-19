@@ -8,7 +8,7 @@ import android.widget.RadioGroup;
 
 import com.fireblack.zhihuibeijing.R;
 import com.fireblack.zhihuibeijing.base.BasePager;
-import com.fireblack.zhihuibeijing.base.impl.GOvAffairsPager;
+import com.fireblack.zhihuibeijing.base.impl.GovAffairsPager;
 import com.fireblack.zhihuibeijing.base.impl.HomePager;
 import com.fireblack.zhihuibeijing.base.impl.NewsCenterPager;
 import com.fireblack.zhihuibeijing.base.impl.SettingPager;
@@ -47,7 +47,7 @@ public class ContentFragment extends BaseFragment {
         mPagerList.add(new HomePager(mActivity));
         mPagerList.add(new NewsCenterPager(mActivity));
         mPagerList.add(new SmartServicePager(mActivity));
-        mPagerList.add(new GOvAffairsPager(mActivity));
+        mPagerList.add(new GovAffairsPager(mActivity));
         mPagerList.add(new SettingPager(mActivity));
 
         mViewPager.setAdapter(new ContentAdapter());
@@ -120,5 +120,12 @@ public class ContentFragment extends BaseFragment {
 //            pager.initData();
             return pager.mRootView;
         }
+    }
+
+    /**
+     * 获取新闻中心页面
+     */
+    public NewsCenterPager getNewsCenterPager(){
+        return (NewsCenterPager) mPagerList.get(1);
     }
 }

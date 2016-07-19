@@ -14,5 +14,5 @@
         android:enabled="false"
         android:text="新闻"
         android:textColor="@drawable/text_menu_selector"
-        android:textSize="25sp" />
+        android:textSize="28sp" />
 </LinearLayout>

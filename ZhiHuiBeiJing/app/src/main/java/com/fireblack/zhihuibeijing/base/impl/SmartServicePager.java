@@ -20,7 +20,6 @@ public class SmartServicePager extends BasePager {
     @Override
     public void initData() {
         tvTitle.setText("生活");
-        btnMenu.setVisibility(View.GONE);
         setSlidingMenuEnable(true);//关闭侧边栏
 
         TextView textView = new TextView(mActivity);
