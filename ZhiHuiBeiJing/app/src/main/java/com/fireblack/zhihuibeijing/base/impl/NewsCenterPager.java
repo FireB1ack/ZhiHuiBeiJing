@@ -42,7 +42,6 @@ public class NewsCenterPager extends BasePager {
 
     @Override
     public void initData() {
-        tvTitle.setText("新闻中心");
         setSlidingMenuEnable(true);//打开侧边栏
 
         getDataFromServer();

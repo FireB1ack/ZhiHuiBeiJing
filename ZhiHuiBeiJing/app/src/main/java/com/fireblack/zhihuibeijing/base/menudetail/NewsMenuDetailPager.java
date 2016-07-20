@@ -7,10 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import com.fireblack.zhihuibeijing.MainActivity;
 import com.fireblack.zhihuibeijing.R;
 import com.fireblack.zhihuibeijing.base.BaseMenuDetailPager;
 import com.fireblack.zhihuibeijing.base.TabDetailPager;
 import com.fireblack.zhihuibeijing.domain.NewsData;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.viewpagerindicator.TabPageIndicator;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
  * 菜单详情页-新闻
  * Created by ChengHao on 2016/7/19.
  */
-public class NewsMenuDetailPager extends BaseMenuDetailPager{
+public class NewsMenuDetailPager extends BaseMenuDetailPager implements ViewPager.OnPageChangeListener{
 
     private ViewPager mViewPager;
     private ArrayList<TabDetailPager> mPageList;
@@ -41,6 +43,10 @@ public class NewsMenuDetailPager extends BaseMenuDetailPager{
         ViewUtils.inject(this, view);
 
         mIndicator = (TabPageIndicator) view.findViewById(R.id.indicator);
+
+        // mViewPager.setOnPageChangeListener(this);//注意:当viewpager和Indicator绑定时,
+        // 滑动监听需要设置给Indicator而不是viewpager
+        mIndicator.setOnPageChangeListener(this);
 
         return view;
     }
@@ -96,6 +102,28 @@ public class NewsMenuDetailPager extends BaseMenuDetailPager{
             container.addView(pager.mRootView);
             pager.initData();
             return pager.mRootView;
+        }
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        MainActivity mainUi = (MainActivity)mActivity;
+        SlidingMenu slidingMenu = mainUi.getSlidingMenu();
+
+        if(position == 0){
+            slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        }else {
+            slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
         }
     }
 }

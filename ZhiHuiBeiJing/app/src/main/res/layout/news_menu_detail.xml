@@ -25,8 +25,8 @@
             android:src="@drawable/news_cate_arr"/>
     </LinearLayout>
 
-    <android.support.v4.view.ViewPager
+    <com.fireblack.zhihuibeijing.view.HorizontalViewPager
         android:id="@+id/vp_menu_detail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+        android:layout_height="match_parent"></com.fireblack.zhihuibeijing.view.HorizontalViewPager>
 </LinearLayout>

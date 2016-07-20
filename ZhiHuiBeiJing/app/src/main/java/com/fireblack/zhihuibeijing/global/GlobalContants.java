@@ -5,4 +5,6 @@ package com.fireblack.zhihuibeijing.global;
  */
 public class GlobalContants {
     public static final String CATEGORIES_URI = "http://192.168.1.106:8080/zhbj/categories.json";
+    public static final String SERVER_URI = "http://192.168.1.106:8080/zhbj";
+
 }
