@@ -2,8 +2,9 @@
 <manifest package="com.fireblack.zhihuibeijing"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon_150"
@@ -20,10 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
-                  android:theme="@style/Theme.PageIndicatorDefaults">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.PageIndicatorDefaults">
         </activity>
         <activity android:name=".GuiderActivity">
+        </activity>
+        <activity android:name=".NewsDetailActivity">
         </activity>
     </application>
 
